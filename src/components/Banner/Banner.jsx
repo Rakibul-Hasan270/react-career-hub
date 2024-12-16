@@ -7,9 +7,10 @@ const Banner = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse items-center lg:items-start text-center lg:text-left">
                     <img
                         src={userImage}
+                        alt="User"
                         className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
-                        <h1 className="text-5xl font-bold">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                             One Step Closer To Your <br />
                             <span className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
                                 Dream Job
