@@ -6,11 +6,16 @@ import Home from './components/Home/Home.jsx'
 import AppliedJobs from './components/AppliedJobs/AppliedJobs.jsx'
 import Blogs from './components/Blogs/Blogs.jsx'
 import JobDetails from './components/JobDetails/JobDetails.jsx'
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx'
+import AppliedJobDetails from './components/AppliedJobDetails/AppliedJobDetails.jsx'
+import AboutUs from './components/AboutUs/AboutUs.jsx'
+import ContactUs from './components/ContactUs/ContactUs.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -18,7 +23,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/applied',
-        element: <AppliedJobs></AppliedJobs>
+        element: <AppliedJobs></AppliedJobs>,
+        loader: () => fetch('/jobs.json')
       },
       {
         path: '/blog',
@@ -27,7 +33,20 @@ const router = createBrowserRouter([
       {
         path: '/job/:Id',
         element: <JobDetails></JobDetails>,
-        loader: () => fetch('../jobs.json')
+        loader: () => fetch('/jobs.json')
+      },
+      {
+        path: '/details/:id',
+        element: <AppliedJobDetails></AppliedJobDetails>,
+        loader: () => fetch('/jobs.json')
+      },
+      {
+        path: '/about',
+        element: <AboutUs></AboutUs>
+      },
+      {
+        path: '/contact',
+        element: <ContactUs></ContactUs>
       }
     ]
   }

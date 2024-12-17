@@ -3,8 +3,8 @@ import { NavLink } from "react-router";
 
 const Navbar = () => {
     const links = (
-        <>
-            <li>
+        <div className="md:flex gap-4">
+            <li className="text-xl">
                 <NavLink
                     to={'/'}
                     className={({ isActive }) =>
@@ -16,7 +16,7 @@ const Navbar = () => {
                     Statistics
                 </NavLink>
             </li>
-            <li>
+            <li className="text-xl">
                 <NavLink
                     to={'/applied'}
                     className={({ isActive }) =>
@@ -28,7 +28,7 @@ const Navbar = () => {
                     Applied Jobs
                 </NavLink>
             </li>
-            <li>
+            <li className="text-xl">
                 <NavLink
                     to={'/blog'}
                     className={({ isActive }) =>
@@ -40,14 +40,36 @@ const Navbar = () => {
                     Blog
                 </NavLink>
             </li>
-        </>
+            <li className="text-xl">
+                <NavLink
+                    to={'/about'}
+                    className={({ isActive }) =>
+                        isActive
+                            ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-3 py-2 rounded-md"
+                            : "hover:text-blue-500 px-3 py-2 rounded-md"
+                    }
+                >
+                    About
+                </NavLink>
+            </li>
+            <li className="text-xl">
+                <NavLink
+                    to={'/contact'}
+                    className={({ isActive }) =>
+                        isActive
+                            ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-3 py-2 rounded-md"
+                            : "hover:text-blue-500 px-3 py-2 rounded-md"
+                    }
+                >
+                    Contact
+                </NavLink>
+            </li>
+        </div>
     );
 
     return (
         <div className="navbar bg-base-100 min-w-[200px] px-4 md:px-8">
-            {/* Navbar Start */}
             <div className="navbar-start">
-                {/* Dropdown Menu for Small Screens */}
                 <div className="dropdown">
                     <button
                         tabIndex={0}
@@ -76,20 +98,17 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                {/* Logo */}
-                <a className="btn btn-ghost normal-case text-xl md:text-2xl font-bold">
-                    Career<span className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">Hub</span>
-                </a>
+                <NavLink to='/'>
+                    <a className="btn btn-ghost normal-case text-xl md:text-2xl font-bold">
+                        Career<span className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">Hub</span>
+                    </a>
+                </NavLink>
             </div>
-
-            {/* Navbar Center */}
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {links}
                 </ul>
             </div>
-
-            {/* Navbar End */}
             <div className="navbar-end">
                 <a className="btn bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
                     Start Applying
