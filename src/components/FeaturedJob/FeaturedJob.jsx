@@ -26,7 +26,7 @@ const FeaturedJob = () => {
             </div>
             <div className={dataLength === data.length && 'hidden'}>
                 <div className="flex justify-center mt-8">
-                    <button onClick={() => setDataLength(data.length)} className='btn btn-primary'>Show More</button>
+                    <button onClick={() => setDataLength(data.length)} className='btn bg-gradient-to-r from-cyan-500 to-blue-500'>Show More</button>
                 </div>
             </div>
         </div>

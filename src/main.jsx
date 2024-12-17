@@ -5,6 +5,7 @@ import Root from './components/Root/Root.jsx'
 import Home from './components/Home/Home.jsx'
 import AppliedJobs from './components/AppliedJobs/AppliedJobs.jsx'
 import Blogs from './components/Blogs/Blogs.jsx'
+import JobDetails from './components/JobDetails/JobDetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -12,16 +13,21 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        path:'/',
-        element:<Home></Home>
+        path: '/',
+        element: <Home></Home>
       },
       {
-        path:'/applied',
-        element:<AppliedJobs></AppliedJobs>
+        path: '/applied',
+        element: <AppliedJobs></AppliedJobs>
       },
       {
-        path:'/blog',
-        element:<Blogs></Blogs>
+        path: '/blog',
+        element: <Blogs></Blogs>
+      },
+      {
+        path: '/job/:Id',
+        element: <JobDetails></JobDetails>,
+        loader: () => fetch('../jobs.json')
       }
     ]
   }

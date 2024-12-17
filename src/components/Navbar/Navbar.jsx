@@ -4,9 +4,42 @@ import { NavLink } from "react-router";
 const Navbar = () => {
     const links = (
         <>
-            <li><NavLink to={'/'} className="hover:text-blue-500">Statistics</NavLink></li>
-            <li><NavLink to={'/applied'} className="hover:text-blue-500">Applied Jobs</NavLink></li>
-            <li><NavLink to={'/blog'} className="hover:text-blue-500">Blog</NavLink></li>
+            <li>
+                <NavLink
+                    to={'/'}
+                    className={({ isActive }) =>
+                        isActive
+                            ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-3 py-2 rounded-md"
+                            : "hover:text-blue-500 px-3 py-2 rounded-md"
+                    }
+                >
+                    Statistics
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to={'/applied'}
+                    className={({ isActive }) =>
+                        isActive
+                            ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-3 py-2 rounded-md"
+                            : "hover:text-blue-500 px-3 py-2 rounded-md"
+                    }
+                >
+                    Applied Jobs
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to={'/blog'}
+                    className={({ isActive }) =>
+                        isActive
+                            ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-3 py-2 rounded-md"
+                            : "hover:text-blue-500 px-3 py-2 rounded-md"
+                    }
+                >
+                    Blog
+                </NavLink>
+            </li>
         </>
     );
 
@@ -45,7 +78,7 @@ const Navbar = () => {
                 </div>
                 {/* Logo */}
                 <a className="btn btn-ghost normal-case text-xl md:text-2xl font-bold">
-                    CareerHub
+                    Career<span className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">Hub</span>
                 </a>
             </div>
 
@@ -58,7 +91,7 @@ const Navbar = () => {
 
             {/* Navbar End */}
             <div className="navbar-end">
-                <a className="btn bg-gradient-to-r from-teal-400 to-blue-500 hover:from-teal-500 hover:to-blue-600 text-white">
+                <a className="btn bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
                     Start Applying
                 </a>
             </div>

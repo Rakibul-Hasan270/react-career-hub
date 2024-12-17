@@ -20,7 +20,7 @@ const Banner = () => {
                         <p className="py-4 sm:py-6 text-sm sm:text-base lg:text-lg">
                             Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job applications from start to finish.
                         </p>
-                        <button className="btn bg-gradient-to-r from-teal-400 to-blue-500 hover:from-teal-500 hover:to-blue-600 text-white">
+                        <button className="btn bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
                             Get Started
                         </button>
                     </div>
